@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-bind-key E display-popup -EE -w 70% -h 80% \
+tmux bind-key E display-popup -EE -w 70% -h 80% \
   "bash ~/.tmux/plugins/tmux-session-manager/session-manager.sh"
 
