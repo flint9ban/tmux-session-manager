@@ -4,9 +4,9 @@
 # 可选：排除当前 session，避免切换到自己报错
 current_session=$(tmux display-message -p '#S' 2>/dev/null || echo "")
 
-list_cmd="tmux list-sessions -F '#{session_name}\\t#{?session_attached,attached,}\\t#{session_windows} windows'"
+list_cmd="tmux list-sessions -F '#{session_name}\t#{?session_attached,attached,}\t#{session_windows} windows'"
 if [ -n "$current_session" ]; then
-  list_cmd="$list_cmd | grep -v '^$current_session\\t'"
+  list_cmd="$list_cmd | grep -v '^$current_session\t'"
 fi
 
 # fzf 选择逻辑
